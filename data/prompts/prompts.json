@@ -175,7 +175,7 @@
         "answer": "Hungary (2.6%)",
         "evidence": [
             "Within the Visegrád Group, Hungary receives the lowest proportion of third-country workers (2.6% of the workers comprising foreign nationals), compared with Slovakia (3.8%), Poland (6.4%), and the Czech Republic (17%)",
-            "Despite these increases, Hungary continues to employ a relatively small proportion of foreign workers. In 2024, foreign nationals accounted for approximately 2.6% of em-ployment in Hungary, compared to 3.8% in Slovakia, 6.4% in Poland, and 17% in the Czech Republic",
+            "Despite these increases, Hungary continues to employ a relatively small proportion of foreign workers. In 2024, foreign nationals accounted for approximately 2.6% of em-ployment in Hungary, compared to 3.8% in Slovakia, 6.4% in Poland, and 17% in the Czech Republic"
         ]
     },
     {
@@ -209,6 +209,226 @@
         "evidence": [
             "migration governance increasingly prioritises economically instrumental, temporary labour mobility while maintaining politically communicable control narratives",
             "The findings suggest that Poland and Hungary should be understood as variants of a selective openness model of migration governance: regimes that combine politically communicable narratives of control with functionally necessary labour market incorporation."
+        ]
+    },
+    {
+        "id": "p5q0",
+        "question": "What was the purpose of the 1960 'Master Plan' in California?",
+        "answer": "To direct the most academically successful students to public research universities, modestly successful students to four-year colleges, and the remaining students to community colleges",
+        "evidence": [
+            "In 1960, the state of California adopted a “Master Plan” that directed the most academically successful students to public research universities, modestly successful students to public four-year colleges, and the remaining students to community colleges"
+        ]
+    },
+    {
+        "id": "p5q1",
+        "question": "How does the article by Yara Abdelaziz and Elizabeth Buckner contribute to the Special Issue of higher education?",
+        "answer": "It examines the relationship between political egalitarianism and access to higher education",
+        "evidence": [
+            "The contribution of Yara Abdelaziz and Elizabeth Buckner looks for relationships between economic inequality, postsecondary educational opportunity, and political egalitarianism."
+        ]
+    },
+    {
+        "id": "p5q2",
+        "question": "In the U.S., how did the percentage of higher education budgets funded by state and local support change between 1977 and 2012?",
+        "answer": "Dropped from 57% to 12% of the budget",
+        "evidence": [
+            "Faced with these new financial pressures, states began to limit or reduce funding for higher education. State and local support peaked in 1977, comprising 57% of the higher education budget, but dropped to just 39% in 2012."
+        ]
+    },
+    {
+        "id": "p5q3",
+        "question": "How can massification coexist with rising socioeconomic inequality in higher education?",
+        "answer": "As a result of stratification, elites hold the majority of the oppertunities presented by massification.",
+        "evidence": [
+            "One reason that widening access to higher education, even with its correlate of higher earnings, has not reduced inequality is stratification both among (and within) postsecondary institutions and among students who attend them. Stratification reflects differentiation among institutions based on educational quality, reputation, and the prospective status of graduates.",
+            "Members of elite groups hoard opportunities, in other words, and in so doing limit the impact of massification."
+        ]
+    },
+    {
+        "id": "p5q4",
+        "question": "What are the four dimensions of privatization in higher education discussed by McClure et al.?",
+        "answer": "commercialization (seeking revenue through services/tech), corporatization (adopting corporate governance), marketization (using market logic like competition and efficiency), and financialization (prioritizing financial transactions and values)",
+        "evidence": [
+            "Privatization has multiple dimensions; a helpful literature review on the phenomenon by Kevin R. McClure et al. identifies four associated processes: commercialization, corpora-tization, marketization, and financialization",
+            "Commercialization refers to engagement by an institution of higher education in particular activities because they produce revenue, such as developing and supporting companies to sell products enabled by research or expanding instructional offerings online to draw in additional students",
+            "Corporatization typically refers to the adoption of a corporate, for-profit governance structure, rather than a “shared governance” model that gives greater voice to faculty",
+            "Marketization attempts to capture the diverse ways that market characteristics, such as a focus on competition, efficiency, quality, and cost, increasingly shape institutions of higher education.",
+            "Finally, financialization refers to what may be the most subtle aspect of privatization: the increased significance to institutional operations of financial transactions and people who work in the financial sector"
+        ]
+    },
+    {
+        "id": "p6q0",
+        "question": "According to a 2024 survey, what percentage of 'left-behind' elderly parents in Hong Kong show signs of depression?",
+        "answer": "49.6%",
+        "evidence": [
+            "Hong Kong Christian Service (2024) surveyed left‑behind elderly parents, regardless of their religious background, to examine their service needs during the current migration wave. It reveals that, although the negative effects on left‑behind elderly parents gradually lessen over time, 43.2% of left‑behind elderly parents have no children residing in Hong Kong, and 63% remain at a ‘high risk’ of social isolation. 49.6% of the older adults show signs of depression; though decreased from 79.5% in 2023, the figure remains relatively high."
+        ]
+    },
+    {
+        "id": "p6q1",
+        "question": "What was the primary language of the semi-structured interviews of elderly parents of Hong Kong migrants?",
+        "answer": "Cantonese",
+        "evidence": [
+            "As all interviews were conducted in Cantonese, we provide English translations of the direct quotes in this article for accessibility to an academic audience. These quotes are not paraphrased but are direct translations from the original speech."
+        ]
+    },
+    {
+        "id": "p6q2",
+        "question": "How do religious communities in Hong Kong help older adults cope with the physical departure of their children?",
+        "answer": "Spiritual connection, social support, and a reassured outlook on mortality",
+        "evidence": [
+            "Religion is significant in helping older adults reconcile the loss experience through three sources of emotional support: from God, from their children, and from other religious members. Firstly, religion provides older adults with profound emotional comfort through their relationship with God.",
+            "Second, religion helps older adults cope with physical separation from their children by reframing distance through faith. Although parents and children may live apart geographically, older adults believe they remain spiritually connected within God.",
+            "As they come to understand that they are united within God with their children, it reduces feelings of abandonment and helplessness, allowing them to relinquish excessive worry and trust in divine protection.",
+            "Third, religious communities offer vital social supports that help older parents rebuild their daily lives after their children leave. As life priorities shift, older adults invest more time and energy in religious relationships and activities. They actively organise social events, gaining companionship and a renewed sense of purpose."
+        ]
+    },
+    {
+        "id": "p6q3",
+        "question": "How does the term wu nai (powerlessness) capture the specific trauma of parents left behind by the BN(O) migration wave?",
+        "answer": "Wu nai refers to the reluctant acceptance of uncontrollable circumstances, reflecting the sudden loss of primary caregivers and grandchildren.",
+        "evidence": [
+            "In Chinese, the term wu nai captures a distinctive sense of powerlessness, referring to the reluctant acceptance of circumstances that one is unable to control or change. This expression was frequently used by interview participants to articulate their feelings in response to the current migration wave."
+        ]
+    },
+    {
+        "id": "p6q4",
+        "question": "Discuss the role of Foreign Domestic Helpers (FDHs) as a 'substitute' for migrant children and the limitations of this arrangement.",
+        "answer": "They provide instrumental care but are often unable to fulfill emotional and social gaps.",
+        "evidence": [
+            "It is common practice inHongKong to employ foreign domestic helpers (FDHs) from Southeast Asian countries, such as the Philippines and Indonesia, to undertake a range of household responsibilities, which can be summarised as the three “C’s”: cleaning, cooking, and caring",
+            "While FDHs often provide companionship and emotional warmth, such support can be limited due to language barriers, cultural differences, and power hierarchies.",
+            "Therefore, as FDHs partially fill the caregiving gap left by emigrating children, providing substantial instrumental care, in the form of daily routines and physical assistance, they might not be able to fully replace the lack of emotional and social care."
+        ]
+    },
+    {
+        "id": "p7q0",
+        "question": "How many total participants were involved in the action research cycles for child protection across Australia and Uganda?",
+        "answer": "97",
+        "evidence": [
+            "The research was grounded in cycles of interviews, consultation, and participation observation with a total of ninety-seven participants which included South Sudanese leaders and families in Australia and in Uganda."
+        ]
+    },
+    {
+        "id": "p7q1",
+        "question": "Which lens is used to examine the ways White norms and assumptions are embedded in child protection institutions?",
+        "answer": "Critical Whiteness Theory",
+        "evidence": [
+            "This analytic approach uses a constructivist epistemology and is informed by Critical Whiteness Theory (CWT) as a lens to examine assumptions which shape child protection practice.",
+            "Within this approach, Critical Whiteness Theory (CWT) provides one of the lenses for this approach through which the data is interpreted."
+        ]
+    },
+    {
+        "id": "p7q2",
+        "question": "What did participants identify as the true historical origin of physical discipline (the stick) in African communities?",
+        "answer": "It was a myth, introduced by white missionaries during colonial rule to tame Africans, rather than being a cultural tradition",
+        "evidence": [
+            "Participants also challenged assumptions about physical discipline being a cultural norm in African communities. They explained that the use of the stick had been introduced by white missionaries during colonial rule. One participant explained that missionaries used a stick to ‘tame us wild Africans’ and they were keen to state that this was not a longstanding cultural practice."
+        ]
+    },
+    {
+        "id": "p7q3",
+        "question": "Why do South Sudanese families push back against the phrase 'it takes a village to raise a child'?",
+        "answer": "It ignores the effects of colonization and war on African villages.",
+        "evidence": [
+            "Participants pushed back against the phrase ‘it takes a village to raise a child’ describing it as a phrase often used by Westerners that ignores the effects of colonisation and internal wars had on fracturing their villages and social infrastructure."
+        ]
+    },
+    {
+        "id": "p7q4",
+        "question": "Explain the 'relational and cultural misalignment' described as a source of risk in child protection.",
+        "answer": "Western systems prioritize procedural compliance and risk management while South Sudanese communities view safety as a collective responsibility rooted in community connection, creating misalignment",
+        "evidence": [
+            "In South Sudan, keeping children safe was a collective responsibility shaped by war, danger and the need to act quickly or risk a fatality.",
+            "This research demonstrates that South Sudanese families who were interviewed conceptualise child safety, protection and wellbeing as a relational practice enacted through a sense of collective responsibility and cultural authority rather than through formal processes",
+            "The central contribution of this research is the identification of relational and cultural misalignment as a source of risk within child protection practice."
+        ]
+    },
+    {
+        "id": "p8q0",
+        "question": "How many people reside in favelas in Brazil according to the 2022 Census?",
+        "answer": "16.4 million people (8.1% of Brazil’s total population)",
+        "evidence": [
+            "According to the 2022 Census conducted by the “Instituto Brasileiro de Geografia e Estatística” (IBGE 2024), approximately 16.4 million people—representing 8.1% of Brazil’s total population—reside in favelas, marking a significant increase from the 2010 Census, which reported that 6% of the population lived in such areas"
+        ]
+    },
+    {
+        "id": "p8q1",
+        "question": "Which management theory was applied to the context of a public health emergency in community sports organizations in favelas?",
+        "answer": "The stakeholder theory of crisis management",
+        "evidence": [
+            "We relied upon the stakeholder theory of crisis management, which posits that during crises, organisations should adopt management practices that address the needs of multiple stakeholders rather than merely focusing on organisational survival.",
+            "The theory proposes that, beyond contractual obligations, organisations must uphold their social and ethical responsibilities toward multiple stakeholders during crises"
+        ]
+    },
+    {
+        "id": "p8q2",
+        "question": "What was the primary reason that shifting to online engagement was ineffective for most CSO students in favelas?",
+        "answer": "Technological poverty and space limitations",
+        "evidence": [
+            "In the meantime, they faced challenges due to technological poverty, as many students lacked access to mobile devices and/or stable internet connections.",
+            "Technology poverty (or digital exclusion) in Brazil’s favelas remains a pressing issue, exacerbating existing socioeconomic disparities",
+            "In addition to digital exclusion, some managers reported that favela residents also have space limitations.",
+            "They were ineffective in favelas due to the context, which is characterised by technological poverty and space limitations within households."
+        ]
+    },
+    {
+        "id": "p8q3",
+        "question": "Explain the 'virtuous cycle' between CSOs and the community identified in the study on CSOs in favelas.",
+        "answer": "It is a mutualistic relationship where both parties prioritize eachother's needs, leading to overall growth.",
+        "evidence": [
+            "We found that in favelas, CSOs became more resilient by focusing on external stakeholders, specifically on the local community, which could not support them financially. They focused on the local community because residents needed their support to become resilient and survive. In return, the community supported the CSOs back, making them more resilient.",
+            "A key implication for stakeholder dynamics is the existence of a virtuous cycle, where organisations support residents, improving community resilience, and residents in turn support the organisations, improving organisational resilience."
+        ]
+    },
+    {
+        "id": "p8q4",
+        "question": "How do these CSOs fill the gaps of the public sector in Brazilian favelas?",
+        "answer": "By acting as frontline responders and primary distributors of basic goods when government aid was compromised",
+        "evidence": [
+            "Based on our findings, we suggest that when using the theory to investigate CSOs, the role of the government should be further explored. We found that CSOs in favelas have filled gaps left by the government in supporting community resilience.",
+            "In our case study, CSOs filled gaps left by the government agencies, which were expected to provide support to the community. Alongside other NGOs, the CSOs became the main providers/distributors of basic goods, including food. The role of CSOs in filling these gaps reinforces the idea that they are not merely service providers but essential actors in the broader social safety net in favelas."
+        ]
+    },
+    {
+        "id": "p9q0",
+        "question": "In what year was tenure for public servants established as a constitutional principle in Greece?",
+        "answer": "1911",
+        "evidence": [
+            "Tenure has long antecedents, going back to 1911, when the country’s leading statesman and reformer Venizelos made it a constitutional principle, in an attempt to stem the tide of corrupt practices which, as in the USA during the 19th century, dominated the political landscape"
+        ]
+    },
+    {
+        "id": "p9q1",
+        "question": "What is identified as the principal objective of the Greek public service reforms in the 1980s?",
+        "answer": "To harness officialdom, and as many voters as possible, to the chariot of PASOK",
+        "evidence": [
+            "Like parallel changes in higher education, the principal objective was harnessing officialdom, and as many voters as possible, to the chariot of PASOK"
+        ]
+    },
+    {
+        "id": "p9q2",
+        "question": "What was the impact of the massive general strikes led by public service unions during the economic crisis in Greece?",
+        "answer": "It paralyzed the economy, and drove away investors and tourists",
+        "evidence": [
+            "Often punctuated by violence, these massive general strikes paralyzed a weak economy, drove investors and tourists away and added to the burdens that the country and its people have had to bear."
+        ]
+    },
+    {
+        "id": "p9q3",
+        "question": "How did political clientelism shape the Greek administrative system over the three decades preceding the 2013 paper?",
+        "answer": "Votes were traded for favors, devaluing merit and encouraging political loyalty over skill",
+        "evidence": [
+            "In clientelist systems, votes are traded for favors. With a bloated public sector and public service posts viewed by all too many people as a sure way to allowances, job security and a pension, a “favor” came to mean a remunerated “job”, soon be converted to life-time employment at the taxpayers’ expense."
+        ]
+    },
+    {
+        "id": "p9q4",
+        "question": "Contrast the 2013 Greek crisis with the exogenous crises Greece faced in the 20th century.",
+        "answer": "The 2013 crisis was self-inflicted, while exogenous crises had sources outside Greece.",
+        "evidence": [
+            "Greece is no stranger to crises, but most have been exogenous: the Second World War and the Cold War, for instance. Sadly, unlike these crises, the present one is home-made. The wounds that it has caused are largely self-inflicted.",
+            "But these were exogenous crises—calamities whose source and causes lay far outside the borders of Greece, like the Second World War or the Cold War, for instance."
         ]
     }
 ]
