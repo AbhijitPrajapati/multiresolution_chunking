@@ -1,4 +1,9 @@
-def chunk_sentences(sentences, similarity_threshold, sentence_overlap, embedding_model):
+from sentence_transformers import SentenceTransformer
+
+embedding_model = SentenceTransformer("BAAI/bge-base-en-v1.5", backend="torch")
+
+
+def chunk_sentences_semantically(sentences, similarity_threshold, sentence_overlap):
     embeddings = embedding_model.encode(sentences)
     similarities = embedding_model.similarity_pairwise(embeddings[:-1], embeddings[1:])
 
