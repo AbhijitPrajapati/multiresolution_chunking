@@ -1,6 +1,4 @@
-from sentence_transformers import SentenceTransformer
-
-embedding_model = SentenceTransformer("BAAI/bge-base-en-v1.5", backend="torch")
+from src.embedding import embedding_model
 
 
 def chunk_sentences_semantically(sentences, similarity_threshold, sentence_overlap):
