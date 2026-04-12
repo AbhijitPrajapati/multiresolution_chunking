@@ -1,0 +1,80 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import json
+
+
+def main():
+    with open("results/results.json", "r") as f:
+        data = json.load(f)
+
+    data = [
+        data["fixed_length"],
+        data["sentence_based"],
+        data["semantic"]["0.5"],
+        data["semantic"]["0.6"],
+        data["semantic"]["0.65"],
+        data["multiresolution"],
+    ]
+    mrp, recall_1, recall_3, recall_5, precision_1, precision_3, precision_5 = [
+        [] for _ in range(7)
+    ]
+    for m in data:
+        mrp.append(m["mean_reciprocal_rank"])
+        recall_1.append(m["recall@k"]["1"])
+        recall_3.append(m["recall@k"]["3"])
+        recall_5.append(m["recall@k"]["5"])
+        precision_1.append(m["precision@k"]["1"])
+        precision_3.append(m["precision@k"]["3"])
+        precision_5.append(m["precision@k"]["5"])
+
+    method_labels = [
+        "Fixed Length",
+        "Sentence Based",
+        "Semantic (0.5)",
+        "Semantic (0.6)",
+        "Semantic (0.65)",
+        "Multiresolution",
+    ]
+
+    fig_mrp, ax_mrp = plt.subplots(figsize=(10, 6))
+    mrp = [m["mean_reciprocal_rank"] for m in data]
+
+    ax_mrp.bar(method_labels, mrp, color="steelblue", alpha=0.7)
+    ax_mrp.set_title("Mean Reciprocal Rank")
+    ax_mrp.grid(axis="y", alpha=0.3)
+
+    fig_recall, ax_recall = plt.subplots(figsize=(12, 6))
+
+    x = np.arange(len(method_labels))
+    width = 0.25
+
+    ax_recall.bar(x - width, recall_1, width, label="k=1", alpha=0.8)
+    ax_recall.bar(x, recall_3, width, label="k=3", alpha=0.8)
+    ax_recall.bar(x + width, recall_5, width, label="k=5", alpha=0.8)
+
+    ax_recall.set_title("Recall@K")
+    ax_recall.set_xticks(x)
+    ax_recall.set_xticklabels(method_labels)
+    ax_recall.legend()
+    ax_recall.grid(axis="y", alpha=0.3)
+
+    fig_precision, ax_precision = plt.subplots(figsize=(12, 6))
+
+    width = 0.25
+
+    ax_precision.bar(x - width, precision_1, width, label="k=1", alpha=0.8)
+    ax_precision.bar(x, precision_3, width, label="k=3", alpha=0.8)
+    ax_precision.bar(x + width, precision_5, width, label="k=5", alpha=0.8)
+
+    ax_precision.set_title("Precision@K")
+    ax_precision.set_xticks(x)
+    ax_precision.set_xticklabels(method_labels)
+    ax_precision.legend()
+    ax_precision.grid(axis="y", alpha=0.3)
+
+    plt.tight_layout()
+    plt.show()
+
+
+if __name__ == "__main__":
+    main()

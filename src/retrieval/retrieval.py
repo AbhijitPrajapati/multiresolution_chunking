@@ -1,17 +1,10 @@
 from chromadb import Collection
-from embedding import embedding_model
+from src.embedding import embedding_model
 
 
-def retrieve_chunks(
-    prompts, n_chunks, collection: Collection, similarity_threshold=None
-):
-    where = (
-        None
-        if similarity_threshold is None
-        else {"similarity_threshold": similarity_threshold}
-    )
+def retrieve_chunks(prompts, n_chunks, collection: Collection, md_filter=None):
     return collection.query(
         query_embeddings=embedding_model.encode(prompts),
-        where=where,
+        where=md_filter,  # type: ignore
         n_results=n_chunks,
     )["documents"]

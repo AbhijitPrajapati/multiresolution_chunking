@@ -1,13 +1,5 @@
 from nltk.tokenize import word_tokenize
 
-K_EVAL = [1, 3, 5]
-NORM_THRESHOLD = 0.3
-LEN_THRESHOLD = 2
-
-
-def is_relevant(overlap, target_len):
-    return (overlap / target_len) > NORM_THRESHOLD and overlap > LEN_THRESHOLD
-
 
 def get_bigrams(texts_list: list[list[str]]):
     out = []
@@ -21,29 +13,35 @@ def get_bigrams(texts_list: list[list[str]]):
 
 
 class Evaluator:
-    def __init__(self, targets_list: list[list[str]]):
+    def __init__(
+        self,
+        targets_list: list[list[str]],
+        k_vals,
+        overlap_relevancy_ratio_threshold,
+        overlap_relevancy_length_threshold,
+    ):
         self.targets_list_bigrams = get_bigrams(targets_list)
+        self.k_vals = k_vals
+        self.orrt = overlap_relevancy_ratio_threshold
+        self.orlt = overlap_relevancy_length_threshold
 
     def get_metrics(self, chunks_list: list[list[str]]):
         bigrams = get_bigrams(chunks_list)
         mrp = 0.0
-        recall = {k: 0.0 for k in K_EVAL}
-        precision = {k: 0.0 for k in K_EVAL}
+        recall = {k: 0.0 for k in self.k_vals}
+        precision = {k: 0.0 for k in self.k_vals}
         for chunks, targets in zip(bigrams, self.targets_list_bigrams):
-            num_rel = {k: 0 for k in K_EVAL}
-            min_rank = None
-            for i, chunk in enumerate(chunks[: max(K_EVAL)]):
-                for target in targets:
+            num_rel = {k: 0 for k in self.k_vals}
+            min_rank = len(chunks) + 1
+            for target in targets:
+                for i, chunk in enumerate(chunks[: max(self.k_vals)]):
                     overlap = len(chunk & target)
-                    if is_relevant(overlap, len(target)):
+                    if (overlap / len(target)) > self.orrt and overlap > self.orlt:
                         for k in num_rel.keys():
                             if i < k:
                                 num_rel[k] += 1
-                        if min_rank is None:
-                            min_rank = i + 1
+                        min_rank = min(min_rank, i + 1)
                         break
-            if min_rank is None:
-                min_rank = len(chunks) + 1
             mrp += 1 / min_rank
             for k, v in num_rel.items():
                 recall[k] += v / len(targets)
@@ -51,7 +49,7 @@ class Evaluator:
 
         norm = len(self.targets_list_bigrams)
         mrp /= norm
-        for k in K_EVAL:
+        for k in self.k_vals:
             recall[k] /= norm
             precision[k] /= norm
 

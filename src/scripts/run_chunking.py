@@ -8,7 +8,7 @@ from src.chunking import (
     sentence_based_chunking,
 )
 from src.embedding import embedding_model
-from .constants import SIMILARITY_THRESHOLDS
+from src.constants import SIMILARITY_THRESHOLDS
 
 
 client = PersistentClient("chunks")
