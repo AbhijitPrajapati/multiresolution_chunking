@@ -7,14 +7,7 @@ def main():
     with open("results/results.json", "r") as f:
         data = json.load(f)
 
-    data = [
-        data["fixed_length"],
-        data["sentence_based"],
-        data["semantic"]["0.5"],
-        data["semantic"]["0.6"],
-        data["semantic"]["0.65"],
-        data["multiresolution"],
-    ]
+    data = [data["fixed_length"], data["sentence_based"], data["semantic"]]
     mrp, recall_1, recall_3, recall_5, precision_1, precision_3, precision_5 = [
         [] for _ in range(7)
     ]
@@ -27,23 +20,16 @@ def main():
         precision_3.append(m["precision@k"]["3"])
         precision_5.append(m["precision@k"]["5"])
 
-    method_labels = [
-        "Fixed Length",
-        "Sentence Based",
-        "Semantic (0.5)",
-        "Semantic (0.6)",
-        "Semantic (0.65)",
-        "Multiresolution",
-    ]
+    method_labels = ["Fixed Length", "Sentence Based", "Semantic"]
 
-    fig_mrp, ax_mrp = plt.subplots(figsize=(10, 6))
+    fig_mrp, ax_mrp = plt.subplots(figsize=(5, 6))
     mrp = [m["mean_reciprocal_rank"] for m in data]
 
     ax_mrp.bar(method_labels, mrp, color="steelblue", alpha=0.7)
     ax_mrp.set_title("Mean Reciprocal Rank")
     ax_mrp.grid(axis="y", alpha=0.3)
 
-    fig_recall, ax_recall = plt.subplots(figsize=(12, 6))
+    fig_recall, ax_recall = plt.subplots(figsize=(6, 6))
 
     x = np.arange(len(method_labels))
     width = 0.25
@@ -58,7 +44,7 @@ def main():
     ax_recall.legend()
     ax_recall.grid(axis="y", alpha=0.3)
 
-    fig_precision, ax_precision = plt.subplots(figsize=(12, 6))
+    fig_precision, ax_precision = plt.subplots(figsize=(6, 6))
 
     width = 0.25
 
