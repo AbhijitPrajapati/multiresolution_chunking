@@ -3,8 +3,8 @@ import numpy as np
 import json
 
 # values to display
-N_CHUNKS = [3]
-METHODS = ["sentence_based", "semantic"]
+N_CHUNKS = [5]
+METHODS = ["fixed_length", "sentence_based", "semantic"]
 K_VAL = [1, 3, 5]
 METRICS = ["precision@k", "recall@k", "mean_reciprocal_rank"]
 

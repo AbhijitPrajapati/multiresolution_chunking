@@ -1,4 +1,3 @@
-from chromadb import PersistentClient
 import numpy as np
 from src.chunking import semantic_chunking
 from tqdm import tqdm
@@ -12,31 +11,22 @@ def load_papers():
             data = json.load(f)
         yield data, fn
 
+
 # chunk semantically with different similarity thresholds to see if high std subsides or not, as well as chunk per document count
+cpd = []
+chunk_lens = []
+for data, fn in load_papers():
+    chunks, section_names = semantic_chunking(data["content"])
+    cpd.append(len(chunks))
+    chunk_lens.extend([len(c) for c in chunks])
 
-client = PersistentClient("chunks")
-
-fixed = client.get_collection("fixed_length")
-sent = client.get_collection("sentence_based")
-semantic = client.get_collection("semantic")
-
-all_papers = set([m["title"] for m in fixed.get()["metadatas"]])  # type: ignore
+print(np.mean(chunk_lens), np.std(chunk_lens), np.mean(cpd))
 
 
-f = [c["title"] for c in fixed.get()["metadatas"]]  # type: ignore
-sen = [c["title"] for c in sent.get()["metadatas"]]  # type: ignore
-sem = [c["title"] for c in semantic.get()["metadatas"]]  # type: ignore
-
-diff = [sem.count(p) - sen.count(p) for p in all_papers]
-print(np.mean(diff))
-print(diff)
-
-# Chunks Lengths
-# Fixed:
-# Mean: 1437.15 STD: 372.32
-
-# Sentence Based:
-# Mean: 936.48 STD: 443.34
+# aim for 1600-1700 chars per chunk
 
 # Semantic:
-# Mean: 1033.91 STD: 1973.23
+# thesh = 0.5
+# Mean: 1212.3 STD: 1755.4 CPD: 57.0
+# thesh = 0.6
+# Mean: 570.6 STD: 617.7 CPD: 149.5

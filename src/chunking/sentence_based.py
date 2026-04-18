@@ -1,4 +1,5 @@
 from nltk import sent_tokenize
+from src.constants import FIXED_SENTENCES
 
 
 def sentence_based_chunking(sections):
@@ -8,8 +9,8 @@ def sentence_based_chunking(sections):
         sentences = sent_tokenize(section["text"])
         i = 0
         while i < len(sentences):
-            chunk_sentences = sentences[i : i + 5]
+            chunk_sentences = sentences[i : i + FIXED_SENTENCES]
             chunks.append(" ".join(chunk_sentences))
             section_names.append(section["section"])
-            i += 4
+            i += int(0.8 * FIXED_SENTENCES)
     return chunks, section_names
