@@ -1,3 +1,4 @@
-from .nlp import embedding_model, tokenizer
+from .embedding import embedding_model, tokenizer
+from .llm import generate
 
-__all__ = ["embedding_model", "tokenizer"]
+__all__ = ["embedding_model", "tokenizer", "generate"]

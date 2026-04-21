@@ -4,17 +4,25 @@ import json
 
 
 def main():
-    with open("results/results.json", "r") as f:
+    with open("results/retrieval.json", "r") as f:
         data = json.load(f)
 
     data = [data["fixed_length"], data["sentence_based"], data["semantic"]]
-    mrp, recall_1, recall_5, precision_1, precision_5 = [[] for _ in range(5)]
-    for m in data:
-        mrp.append(m["mean_reciprocal_rank"])
-        recall_1.append(m["recall@k"]["1"])
-        recall_5.append(m["recall@k"]["5"])
-        precision_1.append(m["precision@k"]["1"])
-        precision_5.append(m["precision@k"]["5"])
+    mrp, recall_1, recall_5, precision_1, precision_5 = map(
+        list,
+        zip(
+            *(
+                (
+                    m["mean_reciprocal_rank"],
+                    m["recall@k"]["1"],
+                    m["recall@k"]["5"],
+                    m["precision@k"]["1"],
+                    m["precision@k"]["5"],
+                )
+                for m in data
+            )
+        ),
+    )
 
     method_labels = ["Fixed Length", "Sentence Based", "Semantic"]
 

@@ -1,5 +1,4 @@
 from chromadb import PersistentClient
-from uuid import uuid4
 import json
 from tqdm import tqdm
 from src.chunking import (
@@ -7,7 +6,7 @@ from src.chunking import (
     semantic_chunking,
     sentence_based_chunking,
 )
-from src.nlp import embedding_model
+from src.vector_store import store_chunks
 
 
 client = PersistentClient("chunks")
@@ -21,29 +20,19 @@ def load_papers():
         yield data, fn
 
 
-def store_chunks(collection, fn, title, chunks, section_names):
-    embeddings = embedding_model.encode(chunks)
-    ids = [f"{fn}_{str(uuid4())}" for _ in range(len(chunks))]
-    mds = [{"title": title, "section": s} for s in section_names]
-    collection.add(
-        ids=ids,
-        embeddings=embeddings,
-        documents=chunks,
-        metadatas=mds,  # type: ignore
-    )
-
-
 def main():
-    fixed = client.get_or_create_collection("fixed_length")
-    sentence_based = client.get_or_create_collection("sentence_based")
-    semantic = client.get_or_create_collection("semantic")
     for data, fn in load_papers():
-        store_chunks(fixed, fn, data["title"], *fixed_length_chunking(data["content"]))
         store_chunks(
-            sentence_based, fn, data["title"], *sentence_based_chunking(data["content"])
+            "fixed_length", fn, data["title"], *fixed_length_chunking(data["content"])
         )
         store_chunks(
-            semantic,
+            "sentence_based",
+            fn,
+            data["title"],
+            *sentence_based_chunking(data["content"]),
+        )
+        store_chunks(
+            "semantic",
             fn,
             data["title"],
             *semantic_chunking(data["content"]),
