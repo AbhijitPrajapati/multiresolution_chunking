@@ -1,4 +1,5 @@
 import random
+from src.nlp import register_evaluation_batch, get_evaluation_batch_response
 
 
 def build_prompt(question, truth, a, b, c):
@@ -32,5 +33,3 @@ Do NOT assume any answer is correct unless it aligns with the ground truth.
 Rank the answers from best to worst.
 The output msut contain ONLY a sequence of letters seperated by spaces. [eg., B A C]
 """
-
-
