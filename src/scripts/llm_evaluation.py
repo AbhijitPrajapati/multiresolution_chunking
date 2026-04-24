@@ -1,9 +1,10 @@
 import random
-from src.nlp import register_evaluation_batch, get_evaluation_batch_response
+from src.groq import chat_response
+import json
+from tqdm import tqdm
 
 
 def build_prompt(question, truth, a, b, c):
-    a, b, c = random.sample((a, b, c), 3)
     return f"""
 You are evaluating answers to a question.
 
@@ -14,9 +15,9 @@ Ground Truth Answer:
 {truth}
 
 Candidate Answers:
-A: {a}
-B: {b}
-C: {c}
+0: {a}
+1: {b}
+2: {c}
 
 Evaluation Rules:
 
@@ -31,5 +32,40 @@ Do NOT prefer longer answers unless they are more correct.
 Do NOT assume any answer is correct unless it aligns with the ground truth.
 
 Rank the answers from best to worst.
-The output msut contain ONLY a sequence of letters seperated by spaces. [eg., B A C]
+The output must contain ONLY a sequence of number seperated by spaces. [eg., 1 0 2]
 """
+
+
+def main():
+    with open("data/prompts/prompts.json", errors="ignore") as f:
+        data = json.load(f)
+    questions = {q["id"]: (q["question"], q["answer"]) for q in data}
+    with open("results/llm_responses.json") as f:
+        data = json.load(f)
+    fixed = {r["id"]: r["response"] for r in data["fixed_length"]}
+    sentence_based = {r["id"]: r["response"] for r in data["sentence_based"]}
+    semantic = {r["id"]: r["response"] for r in data["semantic"]}
+    evaluation_responses = []
+    for qid, (q, a) in tqdm(questions.items()):
+        responses = [
+            ("fixed_length", fixed[qid]),
+            ("sentence_based", sentence_based[qid]),
+            ("semantic", semantic[qid]),
+        ]
+        random.shuffle(responses)
+
+        shuffled_responses = [r[1] for r in responses]
+        llm_response = chat_response(build_prompt(q, a, *shuffled_responses))
+        evaluation_responses.append(
+            {
+                "id": qid,
+                "response": llm_response,
+                "shuffle_key": [r[0] for r in responses],
+            }
+        )
+    with open("results/response_evaluation.json", "w") as f:
+        json.dump(evaluation_responses, f)
+
+
+if __name__ == "__main__":
+    main()
